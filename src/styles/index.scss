@@ -1,11 +1,11 @@
 :root{
 --background-color: #fff;
 --background-light: #fff;
---shadow-color: rgba(0,0,0,0,0.2);
+--shadow-color: rgba(0,0,0,0.2);
 --primary-color:rgba(255,0,86);
 --text-color: #0A0A0A;
 --text-light: #575757;
---font-fize: 16px;
+--font-fize: 15px;
 --animation-speed: 1;
 }
 
@@ -17,6 +17,11 @@
 
 body{
     font-size: var(--font-fize);
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: none;
 }
 
 .navbar {
@@ -27,6 +32,45 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .logo{
+        font-size: 1.5em;
+        font-weight: bold;
+        color: var(--primary-color);
+        text-shadow: 0 1px 3px var (--shadow-color);
+        span{
+            color: var(--text-color);
+        }
+    }
+    .nav-links{
+        a{
+            margin-left: 1em;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            &::before{
+                content: '';
+                display: block;
+                height: 5px;
+                width: 100%;
+                background-color: var(--primary-color);
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                transform: scaleX(0);
+                transition: transform calc(var(--animation-speed) * 0.5s) ease-in-out;
+            }
+            &:hover{
+                &::before{
+                    transform: scaleX(1);
+                }
+            }
+            &.active{
+                color: var(--primary-color);
+                font-weight: bolder;
+            }
+        }
+    }
 }
 
 .container{
