@@ -7,6 +7,11 @@ export default function Navbar() {
                 <a href="#!">Recipes</a>
                 <a href="#!">Settings</a>
             </div>
+            <div className="sidebar-btn">
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            </div>
             
             
 </div>
