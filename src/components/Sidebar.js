@@ -1,7 +1,14 @@
-export default function SideBar() {
+import { FontAwesomeIcon } from "@fontawesome/react-fontawesome"
+
+export default function SideBar({links}) {
     return(
         <div className="sidebar">
-        <p>Sidebar</p>
+        {links.map(link => (
+            <a className="sidebar-link" href="#!" key={link.name}>
+            <FontAwesomeIcon icon = {link.icon}></FontAwesomeIcon>
+                {link.name}
+                </a>
+        )) }
         </div>
     );
 }

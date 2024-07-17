@@ -1,20 +1,25 @@
 import {useState} from "react";
 import Sidebar from "./Sidebar";
+import { faHome, faList, faCog } from "@fontawesome/free-solid-svg-icons";
+
 
 export default function Navbar() {
     const [showSideBar, setShowSideBar] = useState();
     const links = [
         {
             name: "Home",
-            path: "/"
+            path: "/",
+            icon: faHome
     },
     {
         name: "Recipes",
-        path: "/recipes"
+        path: "/recipes",
+        icon: faList
     },
     {
         name: "Settings",
-        path: "/settings"
+        path: "/settings",
+        icon: faCog
     } 
 ]
     return (
@@ -35,7 +40,7 @@ export default function Navbar() {
             <div className="bar"></div>
             </div>
             </div>
-            <Sidebar/>
+            <Sidebar links={links} />
             </>
             
     )
