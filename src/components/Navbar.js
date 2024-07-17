@@ -1,6 +1,6 @@
 import {useState} from "react";
 import Sidebar from "./Sidebar";
-import { faHome, faList, faCog } from "@fontawesome/free-solid-svg-icons";
+import { faHome, faList, faCog } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Navbar() {
@@ -27,19 +27,17 @@ export default function Navbar() {
         <div className="navbar container">
             <a href="#!" className="logo">F<span>oo</span>dieHub</a>
             <div className="nav-links">
-                { links.map(link => (
-                    <a href = "#!" key = {link.name}>{link.name}</a> 
-                )) }
                 <a href="#!" className="active">Home</a>
                 <a href="#!">Recipes</a>
                 <a href="#!">Settings</a>
             </div>
-            <div className="sidebar-btn">
+            <div onClick={() => setShowSideBar(!showSideBar)} className="sidebar-btn">
             <div className="bar"></div>
             <div className="bar"></div>
             <div className="bar"></div>
             </div>
             </div>
+            { showSideBar && <Sidebar links={links} />}
             <Sidebar links={links} />
             </>
             
