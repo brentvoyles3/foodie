@@ -41,6 +41,12 @@ a{
     }
 }
 
+.custom-image{
+    background-color: red;
+    height: 0;
+    width: 100%;
+}
+
 @import "navbar.scss";
 
 
@@ -64,10 +70,17 @@ a{
     }
 }
 
+.section.hero{
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.75vw;
+    }
+}
+
 .main{
     padding-block: 3vw;
 }
-
 
 .container{
     padding-inline: 15vw;
@@ -75,7 +88,7 @@ a{
 
 @media screen and (max-width: 768px) {
     .navbar{
-        .na-links{
+        .nav-links{
             display:none;
         }
         .sidebar-btn{
